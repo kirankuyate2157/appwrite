@@ -1,18 +1,6 @@
-# Use a minimal Linux distribution as the base image
-FROM alpine:latest
+# Use the official Appwrite Docker image as the base image
+FROM appwrite/appwrite:0.10.3
 
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the Appwrite server binary into the container
-COPY appwrite-server /app/appwrite-server
-
-# Expose the Appwrite server's default ports (make sure they match your Appwrite server's configuration)
+# Expose the Appwrite server's default ports
 EXPOSE 80
 EXPOSE 443
-
-# Set the entrypoint command to start the Appwrite server
-ENTRYPOINT ["/app/appwrite-server"]
-
-# Optional: You can add any necessary environment variables here, if your Appwrite server requires them
-# ENV VAR_NAME=VALUE
