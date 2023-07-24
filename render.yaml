@@ -1,0 +1,15 @@
+version: 1
+services:
+  - name: appwrite
+    env:
+      - key: APW_HTTP_PORT
+        value: 80
+      - key: APW_HTTPS_PORT
+        value: 443
+      - key: APW_SECRET_KEY
+        value: default_secret_key
+      - key: APW_HOSTNAME
+        value: yourappwrite.example.com
+      - key: APW_DNS_HOSTNAME
+        value: yourappwrite.example.com
+    startCommand: docker run -d -p 80:80 -p 443:443 --name appwrite appwrite/appwrite:1.3.8
